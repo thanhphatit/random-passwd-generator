@@ -35,7 +35,6 @@ class App extends Component {
   componentDidMount() {
     this.generatePwd();
   }
-  
   generatePwd() {
     const { upperCase, lowerCase, numeric, symbol, length } = this.state;
     let pwd = new RandomPassword()
