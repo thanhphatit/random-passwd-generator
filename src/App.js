@@ -235,8 +235,8 @@ class App extends Component {
               textAlign: "center"
             }}
           >
-            Made with <span style={{ color: "#e25555" }}>&#9829;</span> by{" "}
-            <a href="http://kamerk22.github.io">Kashyap Merai</a>
+            THANHPHATIT <span style={{ color: "#e25555" }}>&#9829;</span>{" "}
+            <a href="https://www.itblognote.com">ITBLOGNOTE</a>
           </div>
         </div>
       </div>
