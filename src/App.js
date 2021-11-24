@@ -19,8 +19,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      length: 8,
-      newLength: 8,
+      length: 16,
+      newLength: 16,
       pwd: "",
       upperCase: true,
       lowerCase: true,

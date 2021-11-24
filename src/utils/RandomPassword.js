@@ -26,7 +26,7 @@ export class RandomPassword {
   }
   setSymbol(isSymbolic) {
     if (isSymbolic) {
-      this.characters += "!@$%^&*()<>,.?/[]{}-=_+";
+      this.characters += "!@$%^&*?/!@$%^&*?!@$%&@";
     }
     return this;
   }
