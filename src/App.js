@@ -26,7 +26,7 @@ class App extends Component {
       lowerCase: true,
       numeric: true,
       symbol: false,
-      theme: "light",
+      theme: "dark",
       typing: false,
       typingTimeout: 0
     };
@@ -34,6 +34,7 @@ class App extends Component {
 
   componentDidMount() {
     this.generatePwd();
+    this.setTheme(this.state.theme);
   }
   generatePwd() {
     const { upperCase, lowerCase, numeric, symbol, length } = this.state;
@@ -63,12 +64,16 @@ class App extends Component {
   }
 
   changeTheme(e) {
-    this.setState({
-      theme: e.target.checked ? "dark" : "light"
-    });
-    root.style.setProperty("--background-color", theme[this.state.theme].font);
-    root.style.setProperty("--font-color", theme[this.state.theme].background);
+    const themeChecked = e.target.checked ? "light" : "dark";
+    this.setState({ theme: themeChecked });
+    this.setTheme(themeChecked);
   }
+
+  setTheme(themeName) {
+    root.style.setProperty("--background-color", theme[themeName].background);
+    root.style.setProperty("--font-color", theme[themeName].font);
+  }
+
   render() {
     return (
       <div>
@@ -85,28 +90,28 @@ class App extends Component {
                   <div className="switch">
                     <Toggle
                       icons={{
-                        checked: (
-                          <img
-                            src={moon}
-                            width="16"
-                            height="16"
-                            role="presentation"
-                            alt="dark"
-                            style={{ pointerEvents: "none" }}
-                          />
-                        ),
                         unchecked: (
                           <img
-                            src={sun}
+                            src={moon}
                             width="16"
                             height="16"
                             role="presentation"
                             alt="light"
                             style={{ pointerEvents: "none" }}
                           />
+                        ),
+                        checked: (
+                          <img
+                            src={sun}
+                            width="16"
+                            height="16"
+                            role="presentation"
+                            alt="dark"
+                            style={{ pointerEvents: "none" }}
+                          />
                         )
                       }}
-                      checked={this.state.theme === "dark"}
+                      checked={this.state.theme === "light"}
                       onChange={e => this.changeTheme(e)}
                     />
                   </div>
