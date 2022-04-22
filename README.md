@@ -11,3 +11,4 @@
 3. Mục 3
 
 ------------
+yarn run deploy
